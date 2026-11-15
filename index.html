@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conectados para aprender | Blog de Computación Básica – ICC</title>
+  <meta name="description" content="Blog educativo sobre herramientas digitales de comunicación y socialización en la educación en línea. Actividad 4 de Computación Básica, Instituto Consorcio Clavijero.">
+  <meta name="author" content="SERGIO ARMANDO ACEVEDO CHACON">
+  <meta name="theme-color" content="#0f2a4a">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="inicio">
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+  <div class="progress" aria-hidden="true"><div class="progress__bar" id="progressBar"></div></div>
+
+  <!-- A. ENCABEZADO -->
+  <header class="site-header" id="top">
+    <div class="topbar">
+      <div class="container topbar__inner">
+        <p>Instituto Consorcio Clavijero (ICC) · Materia: Computación Básica · Actividad 4</p>
+        <p>Autor: <strong id="autor-nombre">SERGIO ARMANDO ACEVEDO CHACON</strong></p>
+      </div>
+    </div>
+    <div class="masthead">
+      <div class="container masthead__inner">
+        <a class="brand" href="#inicio" aria-label="Conectados para aprender, ir al inicio">
+          <img src="assets/images/logo.svg" alt="" width="44" height="44">
+          <span class="brand__text">
+            <strong>Conectados para aprender</strong>
+            <small>Herramientas digitales en la educación en línea</small>
+          </span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="menu">
+          <span class="nav-toggle__bars" aria-hidden="true"></span>
+          <span class="sr-only">Abrir o cerrar menú</span>
+        </button>
+      </div>
+    </div>
+    <nav class="nav" id="menu" aria-label="Navegación principal">
+      <div class="container">
+        <ul>
+          <li><a href="#presentacion">Inicio</a></li>
+          <li><a href="#entradas">Entradas</a></li>
+          <li><a href="#introduccion">Introducción</a></li>
+          <li><a href="#comunicacion">Comunicación</a></li>
+          <li><a href="#socializacion">Socialización</a></li>
+          <li><a href="#uso-responsable">Uso responsable</a></li>
+          <li><a href="#formacion">Mi formación</a></li>
+          <li><a href="#referencias">Referencias</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido">
+
+    <!-- B. HERO -->
+    <section class="hero" id="presentacion" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow">Computación Básica · Actividad 4 · ICC</p>
+          <h1 id="hero-title">Conectados para aprender</h1>
+          <p class="hero__subtitle">Herramientas digitales de comunicación y socialización en la educación en línea.</p>
+          <p>Este blog nace como parte de la Actividad 4 de Computación Básica del Instituto Consorcio Clavijero. Su propósito es explicar seis herramientas digitales que utilizo para comunicarme y relacionarme durante mis estudios en línea, ejemplificar cómo se aplican en mi vida académica y compartir lecturas de tecnología que complementan el tema.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#entradas">Comenzar a explorar</a>
+            <a class="btn btn--ghost-light" href="#comunicacion">Ir a las herramientas</a>
+          </div>
+        </div>
+        <aside class="hero__card" aria-label="Resumen del contenido">
+          <h2>Seis herramientas, dos grupos</h2>
+          <div class="hero__group">
+            <h3>Comunicación</h3>
+            <ul>
+              <li><a href="#correo">Correo electrónico</a></li>
+              <li><a href="#mensajeria">Mensajería instantánea</a></li>
+              <li><a href="#videollamadas">Videollamadas</a></li>
+            </ul>
+          </div>
+          <div class="hero__group">
+            <h3>Socialización</h3>
+            <ul>
+              <li><a href="#redes">Redes sociales</a></li>
+              <li><a href="#blogs">Blogs</a></li>
+              <li><a href="#paginas">Páginas personales</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PORTADA Y ENTRADAS DEL BLOG -->
+    <section class="portada" aria-label="Entradas destacadas">
+      <div class="container">
+        <div class="portada__grid" id="portadaGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="entradas" aria-labelledby="ent-title">
+      <div class="container">
+        <div class="section__title-bar">
+          <h2 id="ent-title">Lecturas de tecnología</h2>
+        </div>
+        <p class="section__intro">Selección de artículos de blogs tecnológicos y de Wikipedia sobre temas que forman parte del mundo digital en el que estudiamos. Cada tarjeta incluye una breve nota con mis palabras y enlaza al texto original, que es donde conviene leer el contenido completo.</p>
+
+        <div class="filters">
+          <div class="filters__row" id="filtroCat" role="group" aria-label="Filtrar por categoría">
+            <span class="filters__label">Tema</span>
+          </div>
+          <div class="filters__row" id="filtroTipo" role="group" aria-label="Filtrar por tipo de fuente">
+            <span class="filters__label">Fuente</span>
+          </div>
+          <div class="filters__row">
+            <div class="search">
+              <label class="sr-only" for="buscar">Buscar en las entradas</label>
+              <input type="search" id="buscar" placeholder="Buscar entradas…" autocomplete="off">
+            </div>
+          </div>
+        </div>
+
+        <p class="count" id="feedCount" role="status" aria-live="polite"></p>
+        <ul class="feed" id="feed"></ul>
+        <noscript><p class="empty">Para ver las entradas y los filtros se necesita activar JavaScript en el navegador.</p></noscript>
+        <div class="more"><button class="btn btn--blue" type="button" id="moreBtn">Mostrar más entradas</button></div>
+      </div>
+    </section>
+
+    <!-- C. INTRODUCCIÓN -->
+    <section class="section" id="introduccion" aria-labelledby="intro-title">
+      <div class="container narrow">
+        <p class="eyebrow">Introducción</p>
+        <h2 id="intro-title">La educación en línea también es un espacio para convivir</h2>
+        <p>Estudiar en una modalidad virtual cambia la forma en que se aprende, pero también la forma en que se convive. No hay un salón compartido ni un pasillo donde preguntar una duda al compañero de al lado, así que toda esa interacción tiene que ocurrir a través de herramientas digitales. Por eso, saber utilizarlas bien no es un complemento de la formación: es una condición para poder participar plenamente en ella.</p>
+        <p>En este blog agrupo las herramientas en dos categorías. Las <strong>herramientas de comunicación</strong> (correo electrónico, mensajería instantánea y videollamadas) permiten intercambiar información de manera directa con docentes, compañeros y personal administrativo. Las <strong>herramientas de socialización</strong> (redes sociales, blogs y páginas personales) permiten construir comunidad, compartir ideas y dar a conocer lo que se aprende.</p>
+        <p>Para cada herramienta presento una definición, sus características principales, ejemplos de plataformas y una situación concreta de uso en mis estudios en el Instituto Consorcio Clavijero. Al final se incluye una sección sobre el uso responsable de estos recursos, una reflexión personal y las referencias consultadas.</p>
+      </div>
+    </section>
+
+    <!-- D. COMUNICACIÓN -->
+    <section class="section section--alt" id="comunicacion" aria-labelledby="com-title">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Parte 1</p>
+          <h2 id="com-title">Herramientas de comunicación digital</h2>
+          <p>Son los medios que permiten enviar y recibir mensajes de forma rápida entre personas que no comparten el mismo espacio físico. Se diferencian entre sí por el nivel de formalidad y por si la conversación ocurre de manera diferida o en tiempo real.</p>
+        </header>
+
+        <div class="cards">
+
+          <!-- Correo -->
+          <article class="card" id="correo" aria-labelledby="correo-title">
+            <header class="card__head">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
+              </span>
+              <div>
+                <p class="card__kicker">Comunicación · 1 de 3</p>
+                <h3 id="correo-title">Correo electrónico</h3>
+              </div>
+              <button class="card__toggle" type="button" aria-expanded="true" aria-controls="correo-body">
+                <span class="card__toggle-label">Ocultar detalle</span>
+              </button>
+            </header>
+            <div class="card__body" id="correo-body">
+              <h4>Definición</h4>
+              <p>El correo electrónico es un servicio que permite redactar, enviar y recibir mensajes escritos a través de internet mediante una dirección personal única. Además del texto, el mensaje puede llevar archivos adjuntos, como documentos, imágenes o presentaciones. Es una comunicación asincrónica: quien escribe y quien lee no necesitan coincidir en el tiempo, y el mensaje queda guardado para consultarse o responderse después. Por su carácter escrito y su valor como registro, se considera el canal más formal de los digitales.</p>
+              <h4>Características principales</h4>
+              <ul>
+                <li>Comunicación asincrónica, sin necesidad de coincidir en horario.</li>
+                <li>Uso de una dirección única que identifica a cada persona.</li>
+                <li>Posibilidad de adjuntar archivos y enviar un mismo mensaje a varios destinatarios.</li>
+                <li>Conserva el historial, lo que sirve como comprobante de lo enviado.</li>
+                <li>Exige cuidar el asunto, el saludo y la redacción por su tono formal.</li>
+              </ul>
+              <div class="example">
+                <h4>Ejemplo de aplicación en el ICC</h4>
+                <p>Si al revisar las indicaciones de una actividad tengo una duda sobre el formato de entrega, le escribo un correo al docente de la asignatura. En el asunto indico la materia y el tema, me presento con mi nombre completo, planteo la pregunta de forma concreta y agradezco su atención. Si necesito mostrar de qué hablo, adjunto mi borrador. La respuesta me llega por escrito y puedo volver a consultarla mientras elaboro mi trabajo, además de que queda constancia de la indicación recibida.</p>
+              </div>
+              <h4>Plataformas o aplicaciones</h4>
+              <ul class="chips">
+                <li>Gmail</li>
+                <li>Outlook</li>
+                <li>Yahoo Mail</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Mensajería -->
+          <article class="card" id="mensajeria" aria-labelledby="msj-title">
+            <header class="card__head">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H9l-5 4V6a1 1 0 0 1 1-1Z"/><path d="M8 10h8M8 13h5"/></svg>
+              </span>
+              <div>
+                <p class="card__kicker">Comunicación · 2 de 3</p>
+                <h3 id="msj-title">Mensajería instantánea</h3>
+              </div>
+              <button class="card__toggle" type="button" aria-expanded="true" aria-controls="msj-body">
+                <span class="card__toggle-label">Ocultar detalle</span>
+              </button>
+            </header>
+            <div class="card__body" id="msj-body">
+              <h4>Definición</h4>
+              <p>La mensajería instantánea es un sistema de comunicación que permite intercambiar mensajes breves entre dos o más personas casi en el mismo momento en que se escriben, mediante una aplicación conectada a internet. Funciona como una conversación escrita en la que se pueden compartir también imágenes, archivos, notas de voz y enlaces. Puede darse entre dos personas o en grupos, y suele mostrar si el mensaje fue entregado o leído. Es un canal más ágil e informal que el correo, pensado para resolver asuntos rápidos.</p>
+              <h4>Características principales</h4>
+              <ul>
+                <li>Intercambio rápido de mensajes cortos, casi en tiempo real.</li>
+                <li>Conversaciones individuales y grupos de trabajo.</li>
+                <li>Envío de archivos, imágenes, enlaces y mensajes de voz.</li>
+                <li>Indicadores de entrega, lectura o disponibilidad.</li>
+                <li>Tono más cercano e informal, que no debe confundirse con descuido.</li>
+              </ul>
+              <div class="example">
+                <h4>Ejemplo de aplicación en el ICC</h4>
+                <p>Cuando una actividad se realiza en equipo, creo con mis compañeros un grupo de mensajería. Ahí acordamos quién redactará cada parte, nos recordamos las fechas de entrega, compartimos las ligas de las fuentes que encontramos y resolvemos dudas pequeñas sin esperar un correo. Para consultas formales o que requieran la respuesta del docente sigo usando los canales institucionales, y dejo la mensajería para la coordinación ágil entre pares.</p>
+              </div>
+              <h4>Plataformas o aplicaciones</h4>
+              <ul class="chips">
+                <li>WhatsApp</li>
+                <li>Telegram</li>
+                <li>Microsoft Teams</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Videollamadas -->
+          <article class="card" id="videollamadas" aria-labelledby="vid-title">
+            <header class="card__head">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10.5 5-3v9l-5-3"/></svg>
+              </span>
+              <div>
+                <p class="card__kicker">Comunicación · 3 de 3</p>
+                <h3 id="vid-title">Videollamadas</h3>
+              </div>
+              <button class="card__toggle" type="button" aria-expanded="true" aria-controls="vid-body">
+                <span class="card__toggle-label">Ocultar detalle</span>
+              </button>
+            </header>
+            <div class="card__body" id="vid-body">
+              <h4>Definición</h4>
+              <p>Una videollamada es una comunicación en tiempo real en la que dos o más personas se ven y se escuchan a través de internet, cada una desde su propio lugar, usando cámara, micrófono y una aplicación o plataforma de reuniones virtuales. Reproduce, en buena medida, la interacción de una conversación presencial: permite ver gestos, hablar por turnos, presentar materiales en pantalla y trabajar de manera conjunta. Por esa razón es la herramienta más completa para explicar, discutir y acompañar.</p>
+              <h4>Características principales</h4>
+              <ul>
+                <li>Comunicación sincrónica con audio y video.</li>
+                <li>Opción de compartir pantalla para mostrar documentos o presentaciones.</li>
+                <li>Chat integrado para dejar enlaces o preguntas durante la sesión.</li>
+                <li>Posibilidad de grabar la sesión cuando todos los participantes lo permiten.</li>
+                <li>Requiere conexión estable, un espacio con poco ruido y puntualidad.</li>
+              </ul>
+              <div class="example">
+                <h4>Ejemplo de aplicación en el ICC</h4>
+                <p>Si en una asignatura se programa una asesoría o una sesión de aclaración de dudas, me conecto por videollamada a la hora indicada, con el micrófono apagado mientras no hablo y la cámara encendida si así se pide. Puedo exponer mi duda en voz alta, mostrar mi avance compartiendo pantalla y recibir retroalimentación inmediata del docente. También la utilizo con mi equipo para ensayar una exposición antes de entregarla.</p>
+              </div>
+              <h4>Plataformas o aplicaciones</h4>
+              <ul class="chips">
+                <li>Zoom</li>
+                <li>Google Meet</li>
+                <li>Microsoft Teams</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- E. SOCIALIZACIÓN -->
+    <section class="section" id="socializacion" aria-labelledby="soc-title">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Parte 2</p>
+          <h2 id="soc-title">Herramientas de socialización digital</h2>
+          <p>Estas herramientas no sirven solamente para enviar un mensaje a alguien en particular: permiten crear comunidad, compartir lo que se sabe y construir una presencia en línea. Son espacios donde el aprendizaje se hace visible y se enriquece con la participación de otras personas.</p>
+        </header>
+
+        <div class="cards">
+
+          <!-- Redes sociales -->
+          <article class="card" id="redes" aria-labelledby="redes-title">
+            <header class="card__head">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="m8.2 10.8 7.6-3.6M8.2 13.2l7.6 3.6"/></svg>
+              </span>
+              <div>
+                <p class="card__kicker">Socialización · 1 de 3</p>
+                <h3 id="redes-title">Redes sociales</h3>
+              </div>
+              <button class="card__toggle" type="button" aria-expanded="true" aria-controls="redes-body">
+                <span class="card__toggle-label">Ocultar detalle</span>
+              </button>
+            </header>
+            <div class="card__body" id="redes-body">
+              <h4>Definición</h4>
+              <p>Las redes sociales son plataformas en línea donde las personas crean un perfil, se conectan con otras y publican contenido en forma de texto, imágenes, video o enlaces, que los demás pueden ver, comentar y compartir. Su rasgo central es la interacción entre usuarios y la formación de comunidades alrededor de intereses comunes. Esa misma facilidad para difundir contenido hace que circule también información falsa o engañosa, por lo que su uso exige criterio.</p>
+              <h4>Características principales</h4>
+              <ul>
+                <li>Perfiles personales o institucionales.</li>
+                <li>Publicación y difusión rápida de contenido por parte de cualquier usuario.</li>
+                <li>Interacción mediante comentarios, reacciones y mensajes.</li>
+                <li>Grupos y páginas organizados por temas o comunidades.</li>
+                <li>Configuración de privacidad que cada persona debe revisar.</li>
+              </ul>
+              <div class="example">
+                <h4>Ejemplo de aplicación en el ICC</h4>
+                <p>Puedo seguir las páginas oficiales del Instituto para enterarme de avisos, convocatorias y actividades. También puedo unirme a un grupo de estudiantes de mi programa para intercambiar recursos de estudio y compartir experiencias de la modalidad en línea. Al participar procuro hacerlo con respeto, verificar lo que comparto y no publicar datos personales ni materiales de otras personas sin su permiso.</p>
+              </div>
+              <h4>Plataformas o servicios relacionados</h4>
+              <ul class="chips">
+                <li>Facebook</li>
+                <li>Instagram</li>
+                <li>X</li>
+                <li>LinkedIn</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Blogs -->
+          <article class="card" id="blogs" aria-labelledby="blogs-title">
+            <header class="card__head">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M5 20h4l10.5-10.5a2.1 2.1 0 0 0-3-3L6 17v3Z"/><path d="m14.5 8.5 3 3"/><path d="M13 20h8"/></svg>
+              </span>
+              <div>
+                <p class="card__kicker">Socialización · 2 de 3</p>
+                <h3 id="blogs-title">Blogs</h3>
+              </div>
+              <button class="card__toggle" type="button" aria-expanded="true" aria-controls="blogs-body">
+                <span class="card__toggle-label">Ocultar detalle</span>
+              </button>
+            </header>
+            <div class="card__body" id="blogs-body">
+              <h4>Definición</h4>
+              <p>Un blog es un sitio web que se organiza en publicaciones o entradas, normalmente presentadas de la más reciente a la más antigua, en las que una o varias personas escriben sobre un tema con un estilo personal. Cada entrada puede incluir texto, imágenes, videos y enlaces, y suele permitir que los lectores dejen comentarios. A diferencia de una red social, se concentra en textos más extensos y ordenados, lo que lo vuelve útil para explicar, reflexionar y documentar ideas con cierta profundidad.</p>
+              <h4>Características principales</h4>
+              <ul>
+                <li>Entradas ordenadas cronológicamente, con título, fecha y autor.</li>
+                <li>Textos más desarrollados que los de una publicación breve.</li>
+                <li>Organización del contenido por categorías o etiquetas.</li>
+                <li>Espacio para comentarios e interacción con los lectores.</li>
+                <li>Puede crearse y publicarse sin conocimientos avanzados de programación.</li>
+              </ul>
+              <div class="example">
+                <h4>Ejemplo de aplicación en el ICC</h4>
+                <p>El blog puede funcionar como un diario de aprendizaje. Al terminar un módulo, escribo una entrada donde resumo con mis palabras los temas vistos, explico qué fue lo más difícil y cómo lo resolví, e incluyo las fuentes consultadas. Esto me obliga a organizar lo que aprendí y deja un registro que luego puedo usar para repasar. Este mismo blog es un ejemplo, pues lo elaboré para la Actividad 4 de Computación Básica.</p>
+              </div>
+              <h4>Plataformas o servicios relacionados</h4>
+              <ul class="chips">
+                <li>Blogger</li>
+                <li>WordPress</li>
+                <li>GitHub Pages</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Páginas personales -->
+          <article class="card" id="paginas" aria-labelledby="pag-title">
+            <header class="card__head">
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><circle cx="12" cy="14.5" r="2"/><path d="M8.5 18.5c.6-1.6 2-2 3.5-2s2.9.4 3.5 2"/></svg>
+              </span>
+              <div>
+                <p class="card__kicker">Socialización · 3 de 3</p>
+                <h3 id="pag-title">Páginas personales</h3>
+              </div>
+              <button class="card__toggle" type="button" aria-expanded="true" aria-controls="pag-body">
+                <span class="card__toggle-label">Ocultar detalle</span>
+              </button>
+            </header>
+            <div class="card__body" id="pag-body">
+              <h4>Definición</h4>
+              <p>Una página personal es un sitio web que una persona crea para presentarse y mostrar quién es, qué sabe hacer y qué ha logrado. Reúne en un solo lugar información como una biografía breve, la formación académica, proyectos, trabajos realizados y formas de contacto. A diferencia del blog, no se organiza necesariamente por entradas que se renuevan con frecuencia, sino que funciona como una carta de presentación estable, y quien la elabora decide qué contenido mostrar y cómo.</p>
+              <h4>Características principales</h4>
+              <ul>
+                <li>Controlada por completo por su autor, tanto en contenido como en diseño.</li>
+                <li>Estructura sencilla: presentación, formación, proyectos y contacto.</li>
+                <li>Funciona como portafolio que reúne evidencias de aprendizaje.</li>
+                <li>Se puede compartir mediante un enlace.</li>
+                <li>Requiere decidir con cuidado qué datos personales se hacen públicos.</li>
+              </ul>
+              <div class="example">
+                <h4>Ejemplo de aplicación en el ICC</h4>
+                <p>A lo largo de mis estudios puedo armar una página personal que funcione como portafolio digital. En ella incluiría una breve presentación, las asignaturas que curso y los trabajos más representativos, como este blog, para mostrar cómo avanzo en mis competencias digitales. Sería útil para ofrecer evidencias de mi desempeño y, más adelante, para presentarme ante posibles empleadores o instituciones.</p>
+              </div>
+              <h4>Plataformas o servicios relacionados</h4>
+              <ul class="chips">
+                <li>GitHub Pages</li>
+                <li>Google Sites</li>
+                <li>Wix</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- F. USO RESPONSABLE -->
+    <section class="section section--alt" id="uso-responsable" aria-labelledby="uso-title">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Parte 3</p>
+          <h2 id="uso-title">Uso responsable de las herramientas digitales</h2>
+          <p>Usar bien estas herramientas implica más que saber manejarlas. Cada una de ellas conlleva decisiones sobre qué compartir, con quién y de qué manera, y esas decisiones tienen consecuencias para uno mismo y para los demás.</p>
+        </header>
+        <div class="grid-6">
+          <article class="tile">
+            <h3>Protección de datos personales</h3>
+            <p>Información como el domicilio, el teléfono, las calificaciones o los documentos de identidad no debe publicarse ni enviarse sin necesidad. Conviene preguntarse a quién llega lo que comparto y revisar las opciones de privacidad de cada plataforma.</p>
+          </article>
+          <article class="tile">
+            <h3>Seguridad de las cuentas</h3>
+            <p>Cada cuenta debe tener una contraseña larga y distinta, y conviene activar la verificación en dos pasos cuando esté disponible. Tampoco se deben compartir las claves ni abrir enlaces sospechosos que pidan iniciar sesión.</p>
+          </article>
+          <article class="tile">
+            <h3>Comunicación respetuosa</h3>
+            <p>En los medios escritos se pierde el tono de voz y los gestos, por lo que hay que cuidar el saludo, la claridad y la cortesía. Se debe evitar escribir con mayúsculas sostenidas, burlas o descalificaciones, y respetar los horarios y espacios de cada canal.</p>
+          </article>
+          <article class="tile">
+            <h3>Verificación de información</h3>
+            <p>Antes de compartir o citar un dato, es necesario identificar quién lo publica, cuándo y con qué respaldo, y contrastarlo con otras fuentes confiables. Las redes sociales favorecen la circulación rápida de información engañosa, tema que analiza el <a href="https://www.congress.gov/crs-product/R46662" target="_blank" rel="noopener noreferrer">Congressional Research Service (2021)<span class="sr-only"> (se abre en una pestaña nueva)</span></a>.</p>
+          </article>
+          <article class="tile">
+            <h3>Reconocimiento de derechos de autor</h3>
+            <p>Los textos, imágenes, videos y demás materiales tienen autor. Cuando se utilizan ideas o contenidos ajenos hay que citarlos y dar el crédito correspondiente, en formato APA, y no presentar como propio lo que otra persona elaboró.</p>
+          </article>
+          <article class="tile">
+            <h3>Uso responsable de redes sociales</h3>
+            <p>Lo que se publica puede permanecer visible durante mucho tiempo y llegar a personas inesperadas. Conviene pensar antes de publicar, no difundir imágenes o comentarios de terceros sin su consentimiento y mantener una imagen coherente con la vida académica.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- G. FORMACIÓN -->
+    <section class="section" id="formacion" aria-labelledby="form-title">
+      <div class="container narrow">
+        <p class="eyebrow">Reflexión</p>
+        <h2 id="form-title">Aplicación en mi formación académica</h2>
+        <p>Estudiar en línea exige un grado de autonomía que no siempre es fácil al principio. Las seis herramientas que revisé en este blog me ayudan a desarrollarla de maneras distintas. Los blogs y las páginas personales me invitan a poner por escrito lo que aprendo y a conservar evidencias de mi progreso, lo que fortalece el aprendizaje autónomo, pues no solo consumo contenidos: los reorganizo y los explico con mis palabras.</p>
+        <p>En la organización de mis actividades, la mensajería instantánea y el correo electrónico me permiten mantener claros los acuerdos y las fechas, sea con mis compañeros de equipo o con las indicaciones de los docentes. Un mensaje rápido sirve para coordinar, mientras que el correo deja constancia de lo que se pide y se responde. Distinguir cuándo conviene uno y cuándo el otro es, en sí mismo, parte de aprender a comunicarme en un entorno profesional.</p>
+        <p>Las videollamadas hacen posible una comunicación más cercana con docentes y compañeros, algo muy valioso cuando la distancia puede generar sensación de aislamiento. Las redes sociales, por su parte, me conectan con la comunidad del Instituto y con otras personas interesadas en los mismos temas, siempre que las utilice con criterio.</p>
+        <p>En conjunto, aprender a usar estas herramientas con responsabilidad contribuye al desarrollo de mis competencias digitales: buscar y evaluar información, comunicarme con claridad, cuidar mi identidad en línea y crear contenidos propios. Elaborar y publicar este blog fue una forma de poner en práctica esas competencias, pues implicó investigar, redactar, citar las fuentes y compartir el resultado mediante un enlace público.</p>
+      </div>
+    </section>
+
+    <!-- H. REFERENCIAS -->
+    <section class="section section--alt" id="referencias" aria-labelledby="ref-title">
+      <div class="container narrow">
+        <p class="eyebrow">Fuentes consultadas</p>
+        <h2 id="ref-title">Referencias bibliográficas</h2>
+        <ul class="refs">
+          <li>Congressional Research Service. (2021). <em>Social media: Misinformation and content moderation issues for Congress</em>. <a href="https://www.congress.gov/crs-product/R46662" target="_blank" rel="noopener noreferrer">https://www.congress.gov/crs-product/R46662</a></li>
+          <li>GitHub. (s. f.). <em>Quickstart for GitHub Pages</em>. <a href="https://docs.github.com/en/pages/quickstart" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/pages/quickstart</a></li>
+          <li>Microsoft. (2022, 24 de junio). <em>Email</em>. Microsoft Learn. <a href="https://learn.microsoft.com/en-us/style-guide/a-z-word-list-term-collections/e/email" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/style-guide/a-z-word-list-term-collections/e/email</a></li>
+          <li>Microsoft. (s. f.). <em>Instant messaging</em>. Microsoft Teams. <a href="https://www.microsoft.com/en-us/microsoft-teams/instant-messaging" target="_blank" rel="noopener noreferrer">https://www.microsoft.com/en-us/microsoft-teams/instant-messaging</a></li>
+          <li>Nieves, G. D. (2025, 26 de junio). <em>Características de un blog y sus componentes esenciales</em>. PostedIn. <a href="https://www.postedin.com/blog/caracteristicas-blog-componentes-esenciales/" target="_blank" rel="noopener noreferrer">https://www.postedin.com/blog/caracteristicas-blog-componentes-esenciales/</a></li>
+          <li>PrograMate. (2022, 3 de enero). <em>Cómo crear un blog en Blogger paso a paso [2026]</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=39FD-FO9L5E" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=39FD-FO9L5E</a></li>
+          <li>WordPress.org. (s. f.). <em>Introduction to blogging</em>. <a href="https://wordpress.org/documentation/article/introduction-to-blogging/" target="_blank" rel="noopener noreferrer">https://wordpress.org/documentation/article/introduction-to-blogging/</a></li>
+          <li>Zoom. (s. f.). <em>Preguntas frecuentes</em>. Centro de ayuda de Zoom. <a href="https://support.zoom.com/hc/es/" target="_blank" rel="noopener noreferrer">https://support.zoom.com/hc/es/</a></li>
+        </ul>
+        <p class="note">Las entradas de la sección «Lecturas de tecnología» son lecturas complementarias: cada una enlaza directamente a su fuente original (blog tecnológico o Wikipedia, cuyo contenido se publica bajo licencia CC BY-SA) y las notas que las acompañan están redactadas con palabras propias. No forman parte de la lista de referencias de arriba.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p><strong>Conectados para aprender: herramientas digitales en la educación en línea.</strong><br>
+      Instituto Consorcio Clavijero (ICC) · Computación Básica · Actividad 4. Diseño, desarrollo y publicación de un blog.<br>
+      Autor: <span id="autor-footer">SERGIO ARMANDO ACEVEDO CHACON</span></p>
+      <a class="btn btn--ghost-light" href="#inicio">Volver al inicio ↑</a>
+    </div>
+  </footer>
+
+  <a class="to-top" id="toTop" href="#inicio" aria-label="Volver al inicio de la página">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 14 6-6 6 6"/></svg>
+  </a>
+
+  <script src="js/entradas.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
